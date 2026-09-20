@@ -6,7 +6,7 @@
 
 <script src="<?= BASE_URL ?>assets/vendor/jquery/src/jquery.mask.min.js"></script>
 
-<script src="<?= BASE_URL ?>assets/vendor/aos/dist/aos.js"></script>
+<script src="<?= BASE_URL ?>assets/vendor/aos/aos.js"></script>
 
 <script src="<?= BASE_URL ?>assets/js/index.js"></script>
 
