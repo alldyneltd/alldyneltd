@@ -11,8 +11,13 @@ if (session_status() === PHP_SESSION_NONE) {
 
 define('BASE_PATH', dirname(__DIR__, 2));
 
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 $domain = $_SERVER['HTTP_HOST'];
+
+$isHttps =
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+
+$protocol = $isHttps ? 'https://' : 'http://';
 
 // CORREÇÃO: Removemos as barras iniciais e finais soltas para evitar a duplicação
 if ($domain == 'localhost' || str_contains($domain, '192.168.') || $domain == '127.0.0.1') {
