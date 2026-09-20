@@ -20,6 +20,6 @@
 
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/devicon/devicon.min.css">
     
-    <link rel="stylesheet" href="<?= BASE_URL ?>node_modules/aos/dist/aos.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/aos/dist/aos.css">
 </head>
 <body>

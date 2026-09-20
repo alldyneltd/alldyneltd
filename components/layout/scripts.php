@@ -1,14 +1,14 @@
 
 <!-----IMPORTAÇÃO DE BIBLIOTECAS JS----->
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="<?= BASE_URL ?>assets/vendor/jquery/dist/jquery.min.js"></script>
 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= BASE_URL ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="assets/vendor/jquery/src/jquery.mask.js"></script>
+<script src="<?= BASE_URL ?>assets/vendor/jquery/src/jquery.mask.min.js"></script>
 
-<script src="node_modules/aos/dist/aos.js"></script>
+<script src="<?= BASE_URL ?>assets/vendor/aos/dist/aos.js"></script>
 
-<script src="assets/js/index.js"></script>
+<script src="<?= BASE_URL ?>assets/js/index.js"></script>
 
 </body>
 </html>
