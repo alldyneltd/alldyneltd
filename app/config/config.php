@@ -13,17 +13,14 @@ define('BASE_PATH', dirname(__DIR__, 2));
 
 $domain = $_SERVER['HTTP_HOST'];
 
-$isHttps =
-    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
 
 $protocol = $isHttps ? 'https://' : 'http://';
 
-// CORREÇÃO: Removemos as barras iniciais e finais soltas para evitar a duplicação
 if ($domain == 'localhost' || str_contains($domain, '192.168.') || $domain == '127.0.0.1') {
-    $projectFolder = 'alldyneltdapp/'; // Apenas o nome da pasta com barra no final
+    $projectFolder = 'alldyneltdapp/';
 } else {
-    $projectFolder = ''; // Em produção na raiz do domínio, fica totalmente vazio
+    $projectFolder = '';
 }
 
 define('BASE_URL', $protocol . $domain . '/' . $projectFolder);
