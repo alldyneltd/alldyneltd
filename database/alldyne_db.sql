@@ -56,7 +56,7 @@ CREATE TABLE `projects` (
   `name` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `status` enum('Pendente','Desenvolvendo','Concluído','Cancelado') NOT NULL DEFAULT 'Pendente',
-  `date_register` date NOT NULL DEFAULT current_timestamp()
+  `date_register` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -78,7 +78,7 @@ CREATE TABLE `users` (
   `address_complement` varchar(100) DEFAULT NULL,
   `role` enum('Cliente','Admin') NOT NULL DEFAULT 'Cliente',
   `status` enum('Ativo','Inativo') NOT NULL DEFAULT 'Ativo',
-  `date_register` date NOT NULL DEFAULT current_timestamp(),
+  `date_register` date NOT NULL
   `reset_token` varchar(64) DEFAULT NULL,
   `reset_token_expires` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
