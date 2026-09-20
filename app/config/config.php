@@ -23,12 +23,23 @@ if ($domain == 'localhost' || str_contains($domain, '192.168.') || $domain == '1
 
 define('BASE_URL', $protocol . $domain . '/' . $projectFolder);
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "alldyne_db";
+$host = getenv('DB_HOST') ?: 'localhost';
 
-$conn = mysqli_connect($host, $username, $password, $database);
+$username = getenv('DB_USER') ?: 'root';
+
+$password = getenv('DB_PASSWORD') ?: '';
+
+$database = getenv('DB_NAME') ?: 'alldyne_db';
+
+$port = (int) (getenv('DB_PORT') ?: 3306);
+
+$conn = mysqli_connect(
+    $host,
+    $username,
+    $password,
+    $database,
+    $port
+);
 
 //FUNÇÃO AUXILIAR DE EXIBIÇÃO SEGURA DE DADOS
 function e(?string $value): string
