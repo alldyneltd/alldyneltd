@@ -10,11 +10,11 @@
     <base href="<?php echo BASE_URL; ?>">
 
     <!-----IMPORTAÇÃO DE BIBLIOTECAS DE ESTILO----->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL?>assets/vendor/bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/index.css">
 
-    <link rel="icon" type="image/png" href="assets/images/logo_minimalistic.png">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/images/logo_minimalistic.png">
 
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/remixicon/remixicon.css">
 
