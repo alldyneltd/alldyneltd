@@ -33,10 +33,10 @@ require_once BASE_PATH . '/components/layout/header.php';
 <div class="custom-main-container min-vh-100 section-spacer">
     <div class="row g-3">
         <div class="col-12">
-            <span class="badge secondary red mb-3 <?= ($alert === "data_empty") ? "d-inline-block" : "d-none"?>">
+            <span class="badge secondary red mb-3 <?= ($alert === "data_empty") ? "d-inline-block" : "d-none" ?>">
                 Preencha todos os campos obrigatórios.
             </span>
-            <span class="badge secondary red mb-3 <?= ($alert === "update_error") ? "d-inline-block" : "d-none"?>">
+            <span class="badge secondary red mb-3 <?= ($alert === "update_error") ? "d-inline-block" : "d-none" ?>">
                 Falha ao atualizar dados.
             </span>
             <form name="filter-form" action="<?= BASE_URL ?>app/controllers/project-controller.php" method="POST">

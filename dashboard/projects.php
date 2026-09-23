@@ -24,6 +24,8 @@ if ($filter === '') {
 
 $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+$alert = $_GET['alert'] ?? '';
+
 require_once BASE_PATH . '/components/layout/head.php';
 require_once BASE_PATH . '/components/layout/header.php';
 ?>
@@ -31,9 +33,13 @@ require_once BASE_PATH . '/components/layout/header.php';
 <div class="custom-main-container section-spacer">
     <div class="row g-3">
         <div class="col-12">
+            <span class="badge secondary green mb-3 <?= ($alert === "update_success") ? "d-inline-block" : "d-none" ?>">
+                Alterações salvas com sucesso.
+            </span>
             <div class="card no-hover">
                 <div class="card-body">
-                    <form name="filter-form" id="filter-form" action="<?= BASE_URL ?>dashboard/projects.php" method="GET">
+                    <form name="filter-form" id="filter-form" action="<?= BASE_URL ?>dashboard/projects.php"
+                        method="GET">
                         <div class="form-content">
                             <div class="form-header">
                                 <h3 class="card-title">Filtrar Projetos</h3>
@@ -42,7 +48,8 @@ require_once BASE_PATH . '/components/layout/header.php';
                                 <div class="form-field col-12">
                                     <label for="filtert">Filtro</label>
                                     <input class="form-control" name="filter" id="filter"
-                                        placeholder="Digite algum dado..." type="text" maxlength="100" value="<?= e($filter) ?>">
+                                        placeholder="Digite algum dado..." type="text" maxlength="100"
+                                        value="<?= e($filter) ?>">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +68,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                     <p>Todos os projetos cadastrados.</p>
                     <hr>
                     <div>
-                        <?php require_once BASE_PATH . '/components/shared/table-projects.php'?>
+                        <?php require_once BASE_PATH . '/components/shared/table-projects.php' ?>
                     </div>
                 </div>
             </div>
@@ -69,4 +76,4 @@ require_once BASE_PATH . '/components/layout/header.php';
     </div>
 </div>
 
-<?php require_once BASE_PATH . '/components/layout/scripts.php';?>
+<?php require_once BASE_PATH . '/components/layout/scripts.php'; ?>

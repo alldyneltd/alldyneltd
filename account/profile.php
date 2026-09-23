@@ -50,6 +50,9 @@ require_once BASE_PATH . '/components/layout/header.php';
             <span class="badge secondary red mb-3 <?= ($alert === "email_exist") ? "d-inline-block" : "d-none"?>">
                 E-mail já existente. 
             </span>
+            <span class="badge secondary green <?= ($alert === "edit_success") ? "d-block" : "d-none" ?>">
+                Alterações salvas com sucesso.
+            </span>
             <form name="filter-form" action="<?= BASE_URL ?>app/controllers/user-controller.php" method="POST">
                 <input type="hidden" name="action" value="edit_profile">
                 <input type="hidden" name="id" value="<?= e($_SESSION['id']) ?>">

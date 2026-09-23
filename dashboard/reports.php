@@ -85,7 +85,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                     <h3 class="card-title">
                         <?= (empty($total_projects)) ? "Valor não determinado" : e($total_projects) ?>
                     </h3>
-                    <p>Projetos Registrados</p>
+                    <p>Projetos registrados</p>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                     </div>
                     <h3 class="card-title"><?= (empty($total_revenue)) ? "Valor não determinado" : "R$ " . e(number_format($total_revenue, 2, ',', '.')) ?>
                     </h3>
-                    <p>Valor Faturado</p>
+                    <p>Valor faturado</p>
                 </div>
             </div>
         </div>

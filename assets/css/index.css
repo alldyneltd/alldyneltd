@@ -775,9 +775,9 @@ form.no-border {
 }
 
 /*AJUSTE DAS CASES*/
-.btn, .nav-item a {
+.btn, .nav-item a, .card-title {
     text-transform: lowercase !important;
 }
-.btn::first-letter, .nav-item a::first-letter {
+.btn::first-letter, .nav-item a::first-letter, .card-title::first-letter {
     text-transform: uppercase !important;
 }

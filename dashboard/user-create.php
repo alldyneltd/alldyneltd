@@ -21,6 +21,9 @@ require_once BASE_PATH . '/components/layout/header.php';
             <span class="badge secondary red mb-3 <?= ($alert === "email_exist") ? "d-inline-block" : "d-none"?>">
                 E-mail já existente. 
             </span>
+            <span class="badge secondary green mb-3 <?= ($alert === "register_success") ? "d-inline-block" : "d-none" ?>">
+                Usuário criado com sucesso.
+            </span>
             <form action="<?= BASE_URL ?>app/controllers/user-controller.php" method="POST">
                 <input type="hidden" name="action" value="register">
                 <div class="d-flex flex-column gap-3">

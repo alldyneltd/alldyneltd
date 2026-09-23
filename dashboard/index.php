@@ -57,7 +57,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-group-line"></i>
                     </div>
                     <h3 class="card-title"><?= e($total_users)?></h3>
-                    <p>Clientes Totais</p>
+                    <p>Clientes totais</p>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-funds-line"></i>
                     </div>
                     <h3 class="card-title">R$ <?= e(number_format($total_revenue, 2, ',', '.'))?></h3>
-                    <p>Receita Total</p>
+                    <p>Receita total</p>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-contract-line"></i>
                     </div>
                     <h3 class="card-title"><?= e($total_projects_completed)?></h3>
-                    <p>Projetos Completos</p>
+                    <p>Projetos completos</p>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-alert-line"></i>
                     </div>
                     <h3 class="card-title"><?= e($total_projects_pending)?></h3>
-                    <p>Projetos Pendentes</p>
+                    <p>Projetos pendentes</p>
                 </div>
             </div>
         </div>
