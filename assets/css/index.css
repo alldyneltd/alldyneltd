@@ -781,3 +781,6 @@ form.no-border {
 .btn::first-letter, .nav-item a::first-letter, .card-title::first-letter {
     text-transform: uppercase !important;
 }
+.nav-item span {
+  text-transform: none !important;
+}
