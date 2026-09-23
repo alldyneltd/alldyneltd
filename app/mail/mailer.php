@@ -18,10 +18,10 @@ function send_email($to, $subject, $body, $reply_to = null)
     $mail->SMTPAuth = true;
 
     $mail->Username = 'alldyneltd@gmail.com';
-    $mail->Password = 'toat nfip lttp gzle';
+    $mail->Password = 'uega vtka awtl nbpx';
 
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //MUDAR PARA $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; QUANDO FOR HOSPEDAR
-    $mail->Port = 465; //MUDAR PARA 587 QUANDO FOR HOSPEDAR
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //MUDAR PARA $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; QUANDO FOR HOSPEDAR
+    $mail->Port = 587; //MUDAR PARA 587 QUANDO FOR HOSPEDAR
 
     $mail->setFrom('alldyneltd@gmail.com', 'All Dyne Ltd');
     $mail->addAddress($to);
