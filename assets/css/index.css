@@ -773,3 +773,11 @@ form.no-border {
     font-size: var(--font-size-sm) !important;
   }
 }
+
+/*AJUSTE DAS CASES*/
+.btn, .nav-item a {
+    text-transform: lowercase !important;
+}
+.btn::first-letter, .nav-item a::first-letter {
+    text-transform: uppercase !important;
+}
