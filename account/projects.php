@@ -1,5 +1,5 @@
 <?php
-$page_title = "All Dyne Ltd";
+$page_title = "All Dyne Ltd - Projetos";
 require_once __DIR__ . '/../app/config/config.php';
 require_once BASE_PATH . '/app/middleware/auth.php';
 
