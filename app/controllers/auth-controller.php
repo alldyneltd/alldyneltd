@@ -118,7 +118,9 @@ function handle_register($conn)
 
 function handle_logout()
 {
-    session_start();
+    if(session_status() === PHP_SESSION_NONE) {
+        session_start();
+    };
     session_unset();
     session_destroy();
 
