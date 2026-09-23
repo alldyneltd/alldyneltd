@@ -53,7 +53,7 @@ $alert = $_GET['alert'] ?? '';
                 Erro ao enviar E-mail.
               </span>
               <span class="badge secondary green <?= ($alert === "email_sent") ? "d-block" : "d-none" ?>">
-                E-mail de contato enviado.
+                E-mail enviado.
               </span>
             </form>
           </div>

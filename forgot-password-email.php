@@ -38,7 +38,7 @@ require_once BASE_PATH . '/components/layout/head.php';
                     Erro ao enviar E-mail.
                 </span>
                 <span class="badge secondary green <?= ($alert === "email_sent") ? "d-block" : "d-none" ?>">
-                    E-mail de recuperação enviado.
+                    E-mail enviado. Verifique seu spam.
                 </span>
             </form>
         </div>
