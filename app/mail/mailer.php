@@ -1,42 +1,43 @@
 <?php
 
-require_once __DIR__ . '/../../assets/vendor/phpmailer/Exception.php';
-require_once __DIR__ . '/../../assets/vendor/phpmailer/PHPMailer.php';
-require_once __DIR__ . '/../../assets/vendor/phpmailer/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-
 function send_email($to, $subject, $body, $reply_to = null)
 {
-    $mail = new PHPMailer(true);
+    $api_key = getenv('RESEND_API_KEY');
 
-    $mail->CharSet = 'UTF-8';
-    $mail->Encoding = 'base64';
+    $data = [
+        'from' => 'onboarding@resend.dev',
+        'to' => [$to],
+        'subject' => $subject,
+        'html' => $body
+    ];
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-
-    $mail->Username = 'alldyneltd@gmail.com';
-    $mail->Password = 'uega vtka awtl nbpx';
-
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //MUDAR PARA $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; QUANDO FOR HOSPEDAR
-    $mail->Port = 587; //MUDAR PARA 587 QUANDO FOR HOSPEDAR
-
-    $mail->setFrom('alldyneltd@gmail.com', 'All Dyne Ltd');
-    $mail->addAddress($to);
-
-    if($reply_to !== null) {
-        $mail->addReplyTo($reply_to);
+    if ($reply_to !== null) {
+        $data['reply_to'] = $reply_to;
     }
 
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body = $body;
+    $ch = curl_init('https://api.resend.com/emails');
 
-    $mail->AltBody = strip_tags($body);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            'Authorization: Bearer ' . $api_key,
+            'Content-Type: application/json'
+        ],
+        CURLOPT_POSTFIELDS => json_encode($data),
+        CURLOPT_TIMEOUT => 15
+    ]);
 
-    return $mail->send();
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
+    curl_close($ch);
+
+    if ($response === false || $http_code < 200 || $http_code >= 300) {
+        return false;
+    }
+
+    return true;
 }
+
 ?>
