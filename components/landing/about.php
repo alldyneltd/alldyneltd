@@ -23,7 +23,7 @@
                         <div class="icon-box">
                             <i class="ri-scales-3-line"></i>
                         </div>
-                        <h3 class="card-title">Principios</h3>
+                        <h3 class="card-title">Princípios</h3>
                         <p>Nossos princípios são de sempre buscar atender as necessidades do projeto, priorizando a experiência do usuário.</p>
                     </div>
                 </div>
