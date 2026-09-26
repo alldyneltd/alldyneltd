@@ -111,8 +111,13 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-shopping-bag-line"></i>
                     </div>
                     <h3 class="card-title">Resumo do Pedido</h3>
-                    <h3 class="card-title"><?= e($name) ?></h3>
-                    <p><?= e($description) ?></p>
+                    <hr>
+                    <div class="card no-hover">
+                        <div class="card-body">
+                            <h3 class="card-title"><?= e($name) ?></h3>
+                            <p><?= e($description) ?></p>
+                        </div>
+                    </div>
                     <!--<hr>
                     <div class="d-flex justify-content-between align-items-center w-100">
                         <span class="span-highlight">Subtotal</span>
