@@ -82,7 +82,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                             </div>
                         </div>
                     </div>
-                    <div class="card no-hover">
+                    <!--<div class="card no-hover">
                         <div class="card-body">
                             <div class="form-header">
                                 <div class="icon-box">
@@ -100,7 +100,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </form>
         </div>
