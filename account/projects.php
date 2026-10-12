@@ -4,6 +4,22 @@ require_once __DIR__ . '/../app/config/config.php';
 require_once BASE_PATH . '/app/middleware/auth.php';
 
 $id = $_SESSION['id'] ?? '';
+
+if (!empty($id)) {
+    $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $user = mysqli_fetch_assoc($result);
+    if (!$user) {
+        header("Location: " . BASE_URL . 'index.php');
+        exit;
+    }
+} else {
+    header("Location: " . BASE_URL . 'index.php');
+    exit;
+}
+
 $stmt = mysqli_prepare($conn, "SELECT projects.project_id, projects.name AS project_name, projects.price, projects.status, projects.date_register, users.name AS user_name, packages.name AS package_name, packages.description AS package_description
 FROM projects INNER JOIN users ON projects.user_id = users.id INNER JOIN packages ON projects.package_id = packages.id WHERE projects.user_id = ? ORDER BY projects.date_register DESC, projects.project_id DESC");
 mysqli_stmt_bind_param($stmt, "i", $id);

@@ -38,8 +38,20 @@
                             </p>
 
                             <p>Muito obrigado por escolher a All Dyne Ltd. Você poderá conferir o andamento de seu
-                                projeto pela página de projetos, se houver qualquer dúvida acione o suporte por meio de nosso
+                                projeto pela página de projetos, se houver qualquer dúvida acione o suporte por meio de
+                                nosso
                                 formulário de contato.</p>
+
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding: 0 0 30px 0;">
+                                        <a href="https://alldyneltd.onrender.com/account/projects.php"
+                                            style="display: inline-block; padding: 14px 24px; background-color: #198754; color: #ffffff; text-decoration: none; border-radius: 0; font-weight: bold;">
+                                            Ver meus projetos
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
 
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
