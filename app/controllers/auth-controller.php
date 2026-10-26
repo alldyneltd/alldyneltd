@@ -26,7 +26,7 @@ function handle_login($conn)
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($email) || empty($password)) {
-            header("Location: " . BASE_URL . "register.php?alert=data_empty");
+            header("Location: " . BASE_URL . "login.php?alert=data_empty");
             exit;
         }
 
