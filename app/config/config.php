@@ -31,7 +31,7 @@ $username = getenv('DB_USER') ?: 'root';
 
 $password = getenv('DB_PASSWORD') ?: '';
 
-$database = getenv('DB_NAME') ?: 'alldyne_db';
+$database = getenv('DB_NAME') ?: 'alldyneltd_db';
 
 $port = (int) (getenv('DB_PORT') ?: 3306);
 

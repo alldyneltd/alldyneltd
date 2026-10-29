@@ -41,6 +41,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="icon-box">
+                            <i class="ri-shopping-bag-line"></i>
+                        </div>
+                        <h3 class="card-title">Nós de Luz</h3>
+                        <p>Nosso projeto mais recente, desenvolvido esse ano se baseia em um e-commerce simples.</p>
+                        <div class="d-flex flex-wrap gap-1 mb-3">
+                            <span class="badge secondary">B2B</span>
+                            <span class="badge secondary">E-commerce</span>
+                            <span class="badge secondary">Catálogo</span>
+                        </div>
+                        <a href="../nosdeluzapp/" class="btn secondary">Acessar</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

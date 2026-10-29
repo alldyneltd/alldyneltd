@@ -784,3 +784,6 @@ form.no-border {
 .nav-item span {
   text-transform: none !important;
 }
+.card.member .card-title {
+  text-transform: none !important;
+}

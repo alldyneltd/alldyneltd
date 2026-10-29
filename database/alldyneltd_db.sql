@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 19/09/2026 às 16:06
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Host: mysql-alldyneltd.alwaysdata.net
+-- Generation Time: Oct 29, 2026 at 11:10 PM
+-- Server version: 11.8.9-MariaDB
+-- PHP Version: 8.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `alldyne_db`
+-- Database: `alldyneltd_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `packages`
+-- Table structure for table `packages`
 --
 
 CREATE TABLE `packages` (
@@ -35,7 +35,7 @@ CREATE TABLE `packages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `packages`
+-- Dumping data for table `packages`
 --
 
 INSERT INTO `packages` (`id`, `name`, `price`, `description`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `packages` (`id`, `name`, `price`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `projects`
+-- Table structure for table `projects`
 --
 
 CREATE TABLE `projects` (
@@ -56,13 +56,20 @@ CREATE TABLE `projects` (
   `name` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `status` enum('Pendente','Desenvolvendo','Concluído','Cancelado') NOT NULL DEFAULT 'Pendente',
-  `date_register` date NOT NULL
+  `date_register` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`project_id`, `user_id`, `package_id`, `name`, `price`, `status`, `date_register`) VALUES
+(1, 2, 1, 'Projeto de alldyne_cliente', 599.00, 'Pendente', '2026-10-29');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -78,23 +85,31 @@ CREATE TABLE `users` (
   `address_complement` varchar(100) DEFAULT NULL,
   `role` enum('Cliente','Admin') NOT NULL DEFAULT 'Cliente',
   `status` enum('Ativo','Inativo') NOT NULL DEFAULT 'Ativo',
-  `date_register` date NOT NULL,
+  `date_register` date NOT NULL DEFAULT current_timestamp(),
   `reset_token` varchar(64) DEFAULT NULL,
   `reset_token_expires` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `cpf`, `cep`, `address`, `address_number`, `address_complement`, `role`, `status`, `date_register`, `reset_token`, `reset_token_expires`) VALUES
+(1, 'alldyne_admin', 'contaadmin@gmail.com', '$2y$10$j2Gr/rwFowtkccZ2uikZkOd92uPz6layp6fDUG8yY9VtA8D5pN73O', '99999999999', '99999999999', '99999999', '9999999999', '999', '9999999999', 'Admin', 'Ativo', '2026-10-29', NULL, NULL),
+(2, 'alldyne_cliente', 'contacliente@gmail.com', '$2y$10$h/ah6B0H2Ml.irrmgxYKQuFn6lgPLtr0zGJ2f8sXg4ToxxnarTqVu', '99999999999', '99999999999', '99999999', '9999999999', '999', '9999999999', 'Cliente', 'Ativo', '2026-10-29', NULL, NULL);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `packages`
+-- Indexes for table `packages`
 --
 ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `projects`
+-- Indexes for table `projects`
 --
 ALTER TABLE `projects`
   ADD PRIMARY KEY (`project_id`),
@@ -102,40 +117,40 @@ ALTER TABLE `projects`
   ADD KEY `package_id` (`package_id`);
 
 --
--- Índices de tabela `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `packages`
+-- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `projects`
+-- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Restrições para tabelas despejadas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `projects`
+-- Constraints for table `projects`
 --
 ALTER TABLE `projects`
   ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

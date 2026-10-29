@@ -6,7 +6,7 @@
         </div>
         <div class="row g-3 justify-content-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-01.jpg" alt="membro">
                         <h3 class="card-title">André Filipe</h3>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-08.jpg" alt="membro">
                         <h3 class="card-title">Rafael José</h3>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-06.jpg" alt="membro">
                         <h3 class="card-title">Matheus da Silva</h3>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-04.jpg" alt="membro">
                         <h3 class="card-title">Davidson Ramos</h3>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-03.jpg" alt="membro">
                         <h3 class="card-title">Carlos Henrique</h3>
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-07.jpg" alt="membro">
                         <h3 class="card-title">Otávio Lemos</h3>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-05.jpg" alt="membro">
                         <h3 class="card-title">Flávio Andrade</h3>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-02.jpg" alt="membro">
                         <h3 class="card-title">Beatriz Grigorovski</h3>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card no-hover h-100">
+                <div class="card member no-hover h-100">
                     <div class="card-body text-center">
                         <img class="mb-3" src= "assets/images/members/member-09.jpg" alt="membro">
                         <h3 class="card-title">William Rangel</h3>

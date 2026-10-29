@@ -2,7 +2,7 @@
 
 function send_email($to, $subject, $body, $reply_to = null)
 {
-    $api_key = getenv('RESEND_API_KEY');
+    $api_key = getenv('RESEND_API_KEY'); /* TROCAR PRA API SE FOR USAR LOCALMENTE */
 
     $data = [
         'from' => 'onboarding@resend.dev',
