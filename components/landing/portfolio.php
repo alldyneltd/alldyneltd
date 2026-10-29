@@ -54,7 +54,7 @@
                             <span class="badge secondary">E-commerce</span>
                             <span class="badge secondary">Catálogo</span>
                         </div>
-                        <a href="../nosdeluzapp/" class="btn secondary">Acessar</a>
+                        <a href="https://localhost/nosdeluzapp/" class="btn secondary">Acessar</a>
                     </div>
                 </div>
             </div>
