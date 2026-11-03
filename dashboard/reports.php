@@ -6,6 +6,7 @@ require_once BASE_PATH . '/app/middleware/admin.php';
 $date_start = $_GET['date_start'] ?? '';
 $date_end = $_GET['date_end'] ?? '';
 $order = $_GET['order'] ?? 'DESC';
+$filter_applied = !empty($date_start) && !empty($date_end);
 
 $stmt_projects = mysqli_prepare($conn, "SELECT COUNT(*) AS total_projects FROM projects WHERE date_register BETWEEN ? AND ?");
 mysqli_stmt_bind_param($stmt_projects, "ss", $date_start, $date_end);
@@ -63,7 +64,8 @@ require_once BASE_PATH . '/components/layout/header.php';
                                     <select class="form-select" name="order" id="order" placeholder="order"
                                         autocomplete="off" required>
                                         <option value="ASC" <?= $order === 'ASC' ? 'selected' : '' ?>>Crescente</option>
-                                        <option value="DESC" <?= $order === 'DESC' ? 'selected' : '' ?>>Decrescente</option>
+                                        <option value="DESC" <?= $order === 'DESC' ? 'selected' : '' ?>>Decrescente
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -83,7 +85,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                         <i class="ri-contract-line"></i>
                     </div>
                     <h3 class="card-title">
-                        <?= (empty($total_projects)) ? "Valor não determinado" : e($total_projects) ?>
+                        <?= (!$filter_applied) ? "Valor não determinado" : e($total_projects) ?>
                     </h3>
                     <p>Projetos registrados</p>
                 </div>
@@ -96,7 +98,7 @@ require_once BASE_PATH . '/components/layout/header.php';
                     <div class="icon-box">
                         <i class="ri-funds-line"></i>
                     </div>
-                    <h3 class="card-title"><?= (empty($total_revenue)) ? "Valor não determinado" : "R$ " . e(number_format($total_revenue, 2, ',', '.')) ?>
+                    <h3 class="card-title"><?= (!$filter_applied) ? "Valor não determinado" : "R$ " . e(number_format($total_revenue ?? 0, 2, ',', '.')) ?>
                     </h3>
                     <p>Valor faturado</p>
                 </div>
